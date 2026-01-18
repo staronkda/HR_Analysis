@@ -1,0 +1,34 @@
+table DimSatisfiedLevel
+	lineageTag: a9929e79-2cbb-474c-878d-4084d221e5a8
+
+	column SatisfactionID
+		dataType: int64
+		formatString: 0
+		lineageTag: 6fe5012c-7350-4d93-9106-058a07e5b47c
+		summarizeBy: none
+		sourceColumn: SatisfactionID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SatisfactionLevel
+		dataType: string
+		lineageTag: fd01229d-1f9f-4fb7-9a82-086b0fbb5873
+		summarizeBy: none
+		sourceColumn: SatisfactionLevel
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimSatisfiedLevel = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\rihan\Desktop\Studia Praca etc\Analiza\case hr\Datasets\SatisfiedLevel.csv"),[Delimiter=",", Columns=2, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"SatisfactionID", Int64.Type}, {"SatisfactionLevel", type text}})
+				in
+				    #"Changed Type"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,34 @@
+table DimRatingLevel
+	lineageTag: 1a25b215-bfd1-4fe0-9b3e-80d509a049e4
+
+	column RatingID
+		dataType: int64
+		formatString: 0
+		lineageTag: b08d98cd-da6d-44a8-abfa-8804c17018c4
+		summarizeBy: none
+		sourceColumn: RatingID
+
+		annotation SummarizationSetBy = Automatic
+
+	column RatingLevel
+		dataType: string
+		lineageTag: aa7f5b57-4c53-48e3-84fa-79f26fef4566
+		summarizeBy: none
+		sourceColumn: RatingLevel
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimRatingLevel = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\rihan\Desktop\Studia Praca etc\Analiza\case hr\Datasets\RatingLevel.csv"),[Delimiter=",", Columns=2, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"RatingID", Int64.Type}, {"RatingLevel", type text}})
+				in
+				    #"Changed Type"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

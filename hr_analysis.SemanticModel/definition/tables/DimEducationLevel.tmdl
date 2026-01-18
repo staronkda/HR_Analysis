@@ -1,0 +1,34 @@
+table DimEducationLevel
+	lineageTag: 18aacb85-3cbf-4525-843c-7be91ad23bd1
+
+	column EducationLevelID
+		dataType: int64
+		formatString: 0
+		lineageTag: e1ee4fff-0fdf-4b9f-a0ad-349cfa0b85b2
+		summarizeBy: none
+		sourceColumn: EducationLevelID
+
+		annotation SummarizationSetBy = Automatic
+
+	column EducationLevel
+		dataType: string
+		lineageTag: 485aff9c-ca03-430f-b09e-2aa915b0d52b
+		summarizeBy: none
+		sourceColumn: EducationLevel
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimEducationLevel = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\rihan\Desktop\Studia Praca etc\Analiza\case hr\Datasets\EducationLevel.csv"),[Delimiter=",", Columns=2, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"EducationLevelID", Int64.Type}, {"EducationLevel", type text}})
+				in
+				    #"Changed Type"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+
