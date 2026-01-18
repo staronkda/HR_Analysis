@@ -6,5 +6,5 @@
 
 
 
-data source : \[link](https://assets.datacamp.com/production/repositories/6064/datasets/e2f7bf7250e8c73f79deffeed749aa1d08cd2591/Case%20Study\_%20HR%20Analytics%20in%20Power%20BI%20-%20Exercises%20and%20Datasets.pdf)
+data source : [link](https://assets.datacamp.com/production/repositories/6064/datasets/e2f7bf7250e8c73f79deffeed749aa1d08cd2591/Case%20Study\_%20HR%20Analytics%20in%20Power%20BI%20-%20Exercises%20and%20Datasets.pdf)
 
