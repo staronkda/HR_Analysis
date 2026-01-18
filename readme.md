@@ -2,7 +2,7 @@
 
 **Objective:** Atlas Labs, a SAAS company, sought an in-depth analysis of their Human Resources data to understand employee turnover and improve organizational health.
 
-**Key Findings:** The analysis identified a significant **attrition rate** influenced by factors such as lack of promotion, salary disparities, and overtime requirements. Specific trends emerged within technical roles and newer cohorts, suggesting a disconnect between employee expectations and the current corporate structure.
+**Key Findings:** The analysis identifies a 16.1% attrition rate, primarily driven by unsustainable workload patterns and early-tenure friction. A critical disconnect exists for employees in their first two years, where over 50% of total departures occur, suggesting that initial expectations are not being met. Furthermore, the data reveals a high-stakes environment where overtime requirements and frequent business travel (resulting in a 25% attrition rate) are significantly compromising retention. These trends are most acute within the Sales department and the 25–34 age demographic, indicating that Atlas Labs is losing its mid-level talent pool to burnout and a perceived lack of long-term career stability.
 
 **Impact:** Delivered a comprehensive, branded Power BI dashboard that provides HR stakeholders with real-time visibility into workforce metrics. The insights allow leadership to implement targeted retention strategies, specifically focusing on career development and workload management for high-risk employee segments.
 
