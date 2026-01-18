@@ -1,3 +1,5 @@
+# HR Analysis - Atlas Labs
+
 **Objective:** Atlas Labs, a SAAS company, sought an in-depth analysis of their Human Resources data to understand employee turnover and improve organizational health.
 
 **Key Findings:** The analysis identified a significant **attrition rate** influenced by factors such as lack of promotion, salary disparities, and overtime requirements. Specific trends emerged within technical roles and newer cohorts, suggesting a disconnect between employee expectations and the current corporate structure.
